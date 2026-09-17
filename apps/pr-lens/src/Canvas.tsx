@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type PointerEvent, type WheelEvent } from 'react'
+import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
 import type { RenderAtlas } from '@coldtea/pr-lens-renderer'
 import {
   fitCamera,
@@ -58,13 +58,19 @@ export function DiagramCanvas({
     return () => observer.disconnect()
   }, [fit])
 
-  const onWheel = (event: WheelEvent<HTMLDivElement>) => {
-    event.preventDefault()
-    const bounds = event.currentTarget.getBoundingClientRect()
-    const point = { x: event.clientX - bounds.left, y: event.clientY - bounds.top }
-    const factor = event.deltaY < 0 ? 1.08 : 1 / 1.08
-    setCamera((current) => zoomAt(current, point, factor))
-  }
+  useEffect(() => {
+    const viewport = viewportRef.current
+    if (!viewport) return
+    const onWheel = (event: WheelEvent) => {
+      event.preventDefault()
+      const bounds = viewport.getBoundingClientRect()
+      const point = { x: event.clientX - bounds.left, y: event.clientY - bounds.top }
+      const factor = event.deltaY < 0 ? 1.08 : 1 / 1.08
+      setCamera((current) => zoomAt(current, point, factor))
+    }
+    viewport.addEventListener('wheel', onWheel, { passive: false })
+    return () => viewport.removeEventListener('wheel', onWheel)
+  }, [])
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (event.button !== 0) return
@@ -111,7 +117,6 @@ export function DiagramCanvas({
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
-        onWheel={onWheel}
       >
         <div
           className="canvas-stage absolute left-0 top-0 will-change-transform"
