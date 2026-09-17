@@ -15,8 +15,20 @@ Sticky monorepo for weekday X-bookmark tech demos.
 AGENTS.md
 README.md
 apps/<slug>/
+scripts/build-apps.ts
 skills/project-planning/
 tracking/seen-bookmarks.json
+vercel.json
 ```
 
-Never spin a new GitHub repo per demo — keep everything here.
+## Deploy (Vercel)
+
+One Vercel project for the whole repo. Each demo is a path:
+
+- `/` — index of apps
+- `/motion-panels/` — Motion Panels demo
+- `/<slug>/` — future demos
+
+Production builds run `bun run build`, which installs and Vite-builds every `apps/<slug>/` into `dist/<slug>/`.
+
+Never spin a new GitHub or Vercel project per demo — keep everything here.
