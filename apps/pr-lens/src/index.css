@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #0d1117;
+  --chrome: #010409;
+  --pane: #161b22;
+  --canvas: #0d1117;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #9198a1;
+  --added: #3fb950;
+  --modified: #d29922;
+  --removed: #f85149;
+  --ring: #3fb950;
+  --veil: rgba(1, 4, 9, 0.55);
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='light'] {
+  --bg: #f4f5f7;
+  --chrome: #ffffff;
+  --pane: #ffffff;
+  --canvas: #f4f5f7;
+  --border: #d1d9e0;
+  --text: #1f2328;
+  --muted: #59636e;
+  --added: #1f883d;
+  --modified: #bf8700;
+  --removed: #cf222e;
+  --ring: #1f883d;
+  --veil: rgba(244, 245, 247, 0.62);
+  --shadow: rgba(31, 35, 40, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+code,
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.canvas-stage svg {
+  display: block;
+  overflow: visible;
+}

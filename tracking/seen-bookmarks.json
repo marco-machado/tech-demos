@@ -1,14 +1,5 @@
 {
-  "proposed": [
-    {
-      "id": "2096996689680978148",
-      "title": "PR Lens (coldteadotai/pr-lens)",
-      "url": "https://x.com/OhansEmmanuel/status/2096996689680978148",
-      "date": "2026-09-17",
-      "repo": "https://github.com/coldteadotai/pr-lens",
-      "slug": "pr-lens"
-    }
-  ],
+  "proposed": [],
   "built": [
     {
       "id": "2097596925189017695",
@@ -17,6 +8,14 @@
       "date": "2026-09-17",
       "repo": "https://github.com/letstri/motion-panels",
       "slug": "motion-panels"
+    },
+    {
+      "id": "2096996689680978148",
+      "title": "PR Lens (coldteadotai/pr-lens)",
+      "url": "https://x.com/OhansEmmanuel/status/2096996689680978148",
+      "date": "2026-09-17",
+      "repo": "https://github.com/coldteadotai/pr-lens",
+      "slug": "pr-lens"
     }
   ],
   "skipped": []

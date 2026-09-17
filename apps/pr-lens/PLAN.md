@@ -22,8 +22,10 @@ Prove PR Lens can render an interactive walkthrough in the browser from a schema
 - Touching other apps
 
 ## Stack
-- Bun, Vite, React, TypeScript
-- PR Lens renderer/schema packages from https://github.com/coldteadotai/pr-lens
+- Bun 1.4, Vite 8, React 19, TypeScript 6
+- `@coldtea/pr-lens-renderer` 0.2.5
+- `@coldtea/pr-lens-schema` 0.3.0
+- Tailwind CSS 4 for chrome only; diagrams come from the renderer SVG
 
 ## App path
 `apps/pr-lens/`
