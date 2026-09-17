@@ -1,5 +1,6 @@
 {
-  "proposed": [
+  "proposed": [],
+  "built": [
     {
       "id": "2097596925189017695",
       "title": "Motion Panels",
@@ -9,6 +10,5 @@
       "slug": "motion-panels"
     }
   ],
-  "built": [],
   "skipped": []
 }

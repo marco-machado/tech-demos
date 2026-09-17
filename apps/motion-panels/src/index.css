@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #0b0d10;
+  --chrome: #12151a;
+  --pane: #161a21;
+  --editor: #0f1217;
+  --preview: #10141c;
+  --border: #2a303a;
+  --text: #e7e3db;
+  --muted: #8a9186;
+  --sand: #d4a574;
+  --harbor: #7eb8c9;
+  --kelp: #c9d4a0;
+  --danger: #d98973;
+  --ring: #d4a574;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+code,
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+[role='separator'] {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+[role='separator'][aria-orientation='vertical'] {
+  width: 12px;
+}
+
+[role='separator'][aria-orientation='horizontal'] {
+  height: 12px;
+}
+
+[role='separator']::after {
+  content: '';
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 150ms ease, opacity 150ms ease;
+}
+
+[role='separator'][aria-orientation='vertical']::after {
+  width: 2px;
+  height: calc(100% - 28px);
+}
+
+[role='separator'][aria-orientation='horizontal']::after {
+  height: 2px;
+  width: calc(100% - 28px);
+}
+
+[role='separator']:hover::after,
+[role='separator'][data-crossing]::after {
+  background: var(--muted);
+}
+
+[role='separator'][data-resizing]::after {
+  background: var(--sand);
+}
+
+[role='separator']:focus-visible::after {
+  background: var(--ring);
+}
+
+[role='separator'][data-motion-panels-edge]::after {
+  display: none;
+}
+
+[role='separator'][data-motion-panels-edge]:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: -2px;
+}

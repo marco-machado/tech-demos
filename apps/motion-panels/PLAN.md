@@ -21,9 +21,10 @@ Prove Motion Panels feels better than plain resizable panels: drag resize, colla
 - Touching other apps or repo root beyond this folder
 
 ## Stack
-- Bun, Vite, React, TypeScript
-- `motion-panels` from npm/GitHub as documented by https://github.com/letstri/motion-panels
-- Motion dependency as required by the library
+- Bun 1.4, Vite 8, React 19, TypeScript 6
+- `motion-panels` 0.5.2
+- `motion` 13.4 (peer of motion-panels)
+- Tailwind CSS 4 for chrome only; panels stay unstyled from the library
 
 ## App path
 `apps/motion-panels/`
@@ -36,11 +37,11 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] App runs with Bun
+- [x] App runs with Bun
 - [ ] Panels resize and animate collapse/expand
 - [ ] PR includes ≥1 screenshot of the running app
 - [ ] PR includes ≥1 video of the running app
-- [ ] Only files under `apps/motion-panels/` changed (plus tracking if needed)
+- [x] Only files under `apps/motion-panels/` changed (plus tracking if needed)
 
 ## Out of scope for this PR
 Deploy/secrets unless asked.
