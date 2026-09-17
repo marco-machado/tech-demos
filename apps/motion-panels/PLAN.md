@@ -38,9 +38,9 @@ bun run dev
 
 ## Acceptance
 - [x] App runs with Bun
-- [ ] Panels resize and animate collapse/expand
-- [ ] PR includes ≥1 screenshot of the running app
-- [ ] PR includes ≥1 video of the running app
+- [x] Panels resize and animate collapse/expand
+- [x] PR includes ≥1 screenshot of the running app
+- [x] PR includes ≥1 video of the running app
 - [x] Only files under `apps/motion-panels/` changed (plus tracking if needed)
 
 ## Out of scope for this PR
