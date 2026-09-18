@@ -1,5 +1,14 @@
 {
-  "proposed": [],
+  "proposed": [
+    {
+      "id": "2095557317483782213",
+      "title": "humanlayer /show-me",
+      "url": "https://x.com/rekram11/status/2095557317483782213",
+      "date": "2026-09-18",
+      "repo": "https://github.com/humanlayer/skills",
+      "slug": "show-me"
+    }
+  ],
   "built": [
     {
       "id": "2095551141367173608",
@@ -26,5 +35,13 @@
       "slug": "pr-lens"
     }
   ],
-  "skipped": []
+  "skipped": [
+    {
+      "id": "2099087022900367845",
+      "title": "Open Code Review (Alibaba)",
+      "url": "https://x.com/agenticgirl/status/2099087022900367845",
+      "date": "2026-09-18",
+      "reason": "skipped by owner"
+    }
+  ]
 }
