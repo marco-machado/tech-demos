@@ -52,12 +52,12 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] App runs with Bun
-- [ ] All seven formats render for the canned story
-- [ ] Format switcher is interactive
-- [ ] PR includes ≥1 screenshot of the running app
-- [ ] PR includes ≥1 video of the running app
-- [ ] Only files under `apps/show-me/` (+ `tracking/seen-bookmarks.json` if marking built)
+- [x] App runs with Bun
+- [x] All seven formats render for the canned story
+- [x] Format switcher is interactive
+- [x] PR includes ≥1 screenshot of the running app
+- [x] PR includes ≥1 video of the running app
+- [x] Only files under `apps/show-me/` (+ `tracking/seen-bookmarks.json` if marking built)
 
 ## Out of scope for this PR
 Deploy config (already on Vercel); secrets.
