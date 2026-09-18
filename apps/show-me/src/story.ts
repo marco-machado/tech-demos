@@ -325,7 +325,7 @@ export const MERMAID_CHART = `sequenceDiagram
     autonumber
     actor User
     participant Composer
-    participant Expand as expandSkillMention
+    participant Expand
     participant Daemon
     User->>Composer: submit /show-me
     Composer->>Expand: expand mention

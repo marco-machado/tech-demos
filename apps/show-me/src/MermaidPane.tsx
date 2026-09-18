@@ -31,7 +31,12 @@ function loadMermaid() {
         noteBkgColor: '#e8e0d2',
         noteTextColor: '#1b1712',
         activationBkgColor: '#e8d5b0',
-        sequenceNumberColor: '#fffdf8',
+                sequenceNumberColor: '#fffdf8',
+      },
+      sequence: {
+        useMaxWidth: true,
+        actorMargin: 28,
+        messageMargin: 32,
       },
     })
     return mermaid

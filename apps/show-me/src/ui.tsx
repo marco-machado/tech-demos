@@ -134,8 +134,8 @@ export function Chip({
       aria-pressed={active}
       className={`rounded-full border px-2.5 py-1 text-[11px] ${
         active
-          ? 'border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]'
-          : 'border-[var(--line)] bg-[var(--card)] text-[var(--muted)] hover:text-[var(--ink)]'
+          ? 'border-[var(--accent)]/55 bg-[var(--accent)]/18 text-[var(--kw)]'
+          : 'border-white/12 bg-white/6 text-[var(--code-muted)] hover:border-white/25 hover:text-[var(--code-text)]'
       }`}
       onClick={onClick}
       type="button"

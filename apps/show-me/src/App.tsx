@@ -58,7 +58,7 @@ export default function App() {
               <button
                 aria-controls="format-panel"
                 aria-selected={active}
-                className={`flex min-w-[9.5rem] flex-col rounded-xl border px-3 py-2 text-left lg:min-w-0 ${
+                className={`flex min-w-[9.5rem] flex-col rounded-xl border px-3 py-2 text-left text-[var(--ink)] lg:min-w-0 ${
                   active
                     ? 'border-[var(--accent)]/40 bg-[var(--card)] shadow-[0_8px_20px_rgba(27,23,18,0.06)]'
                     : 'border-transparent hover:bg-black/5'
