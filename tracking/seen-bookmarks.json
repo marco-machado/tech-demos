@@ -1,12 +1,12 @@
 {
   "proposed": [
     {
-      "id": "2096247479641809386",
-      "title": "jakubkrehel interface skills (better-*)",
-      "url": "https://x.com/AdhamDannaway/status/2096247479641809386",
+      "id": "2099857792962343264",
+      "title": "Laravel MCP searchable tool catalogs",
+      "url": "https://x.com/pushpak1300/status/2099857792962343264",
       "date": "2026-09-18",
-      "repo": "https://jakub.kr/skills",
-      "slug": "interface-skills"
+      "repo": "https://laravel.com/blog/a-better-way-to-build-mcp-servers-with-laravel",
+      "slug": "mcp-catalog"
     }
   ],
   "built": [
@@ -44,6 +44,13 @@
     }
   ],
   "skipped": [
+    {
+      "id": "2096247479641809386",
+      "title": "jakubkrehel interface skills (better-*)",
+      "url": "https://x.com/AdhamDannaway/status/2096247479641809386",
+      "date": "2026-09-18",
+      "reason": "skipped by owner"
+    },
     {
       "id": "2099087022900367845",
       "title": "Open Code Review (Alibaba)",
