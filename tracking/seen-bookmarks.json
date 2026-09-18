@@ -1,12 +1,13 @@
 {
   "proposed": [
     {
-      "id": "2099952031289000030",
-      "title": "Sonner (via emilkowalski/skills)",
-      "url": "https://x.com/emilkowalski/status/2099952031289000030",
+      "id": "notion-3cb89ff326a181199b6de41e68405fbb",
+      "title": "vgpu (Vercel Labs WebGPU)",
+      "url": "https://app.notion.com/3cb89ff326a181199b6de41e68405fbb",
       "date": "2026-09-18",
-      "repo": "https://github.com/emilkowalski/sonner",
-      "slug": "sonner"
+      "repo": "https://github.com/vercel-labs/vgpu",
+      "slug": "vgpu",
+      "source": "notion-inbox"
     }
   ],
   "built": [
@@ -44,6 +45,13 @@
     }
   ],
   "skipped": [
+    {
+      "id": "2099952031289000030",
+      "title": "Sonner (via emilkowalski/skills)",
+      "url": "https://x.com/emilkowalski/status/2099952031289000030",
+      "date": "2026-09-18",
+      "reason": "skipped by owner; scout outside bookmarks"
+    },
     {
       "id": "2099857792962343264",
       "title": "Laravel MCP searchable tool catalogs",
