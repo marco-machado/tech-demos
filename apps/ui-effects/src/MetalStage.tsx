@@ -62,7 +62,7 @@ export function MetalStage() {
       title="Liquid metal"
     >
       <div className="flex flex-col items-center gap-6">
-        <MetalText color="#E8E4DC" font="600 42px/1 Fraunces">
+        <MetalText color="#E8E4DC" font="600 42px/1 Fraunces, Georgia, serif" glow>
           Pro
         </MetalText>
         <div className="flex items-center gap-4">

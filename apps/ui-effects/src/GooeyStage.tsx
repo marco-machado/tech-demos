@@ -1,10 +1,20 @@
 import { Liquid } from 'liquid-gooey'
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Chip, Stage } from './ui.tsx'
+
+function pin(size: number): CSSProperties {
+  return {
+    position: 'absolute',
+    left: '50%',
+    top: '64%',
+    marginLeft: -size / 2,
+    marginTop: -size / 2,
+  }
+}
 
 export function GooeyStage() {
   const [open, setOpen] = useState(true)
-  const [blur, setBlur] = useState(10)
+  const [blur, setBlur] = useState(12)
 
   return (
     <Stage
@@ -42,28 +52,40 @@ export function GooeyStage() {
     >
       <Liquid
         blur={blur}
-        className="relative h-[230px] w-[230px]"
+        className="relative h-[280px] w-[280px]"
         contrast={20}
         fill="var(--goo)"
-        filterPadding={32}
+        filterPadding={40}
         shadow="0 10px 28px rgba(0,0,0,.35)"
       >
-        <Liquid.Item delay={20} transition="bouncy" x={open ? -58 : 0} y={open ? -40 : 0}>
+        <Liquid.Item
+          delay={20}
+          style={pin(52)}
+          transition="bouncy"
+          x={open ? -58 : 0}
+          y={open ? -46 : 0}
+        >
           <button aria-label="Compose" className="goo-btn" type="button">
             ⌘
           </button>
         </Liquid.Item>
-        <Liquid.Item delay={40} transition="bouncy" x={0} y={open ? -72 : 0}>
+        <Liquid.Item delay={40} style={pin(52)} transition="bouncy" x={0} y={open ? -78 : 0}>
           <button aria-label="Spark" className="goo-btn" type="button">
             ✦
           </button>
         </Liquid.Item>
-        <Liquid.Item delay={60} transition="bouncy" x={open ? 58 : 0} y={open ? -40 : 0}>
+        <Liquid.Item
+          delay={60}
+          style={pin(52)}
+          transition="bouncy"
+          x={open ? 58 : 0}
+          y={open ? -46 : 0}
+        >
           <button aria-label="Layers" className="goo-btn" type="button">
             ▦
           </button>
         </Liquid.Item>
-        <Liquid.Item>
+        <Liquid.Item style={pin(58)}>
           <button
             aria-expanded={open}
             aria-label={open ? 'Close menu' : 'Open menu'}

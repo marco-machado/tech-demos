@@ -69,7 +69,7 @@ export function Stage({
         </a>
       </header>
       <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden bg-[var(--stage)] p-8">
+        <div className="relative flex min-h-[360px] items-center justify-center overflow-hidden bg-[var(--stage)] p-10">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-40"

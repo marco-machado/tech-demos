@@ -44,11 +44,11 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] All five libraries render visibly
-- [ ] App runs with Bun
-- [ ] Looks good enough for screenshot/video
-- [ ] PR includes ≥1 screenshot AND ≥1 video
-- [ ] Only `apps/ui-effects/` (+ tracking if marking built)
+- [x] All five libraries render visibly
+- [x] App runs with Bun
+- [x] Looks good enough for screenshot/video
+- [x] PR includes ≥1 screenshot AND ≥1 video
+- [x] Only `apps/ui-effects/` (+ tracking if marking built)
 
 ## Out of scope for this PR
 Deploy config (Vercel already wired).

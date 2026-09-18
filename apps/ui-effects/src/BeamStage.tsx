@@ -8,7 +8,7 @@ const COLORS = ['colorful', 'mono', 'ocean', 'sunset'] as const
 export function BeamStage() {
   const [size, setSize] = useState<(typeof SIZES)[number]>('md')
   const [color, setColor] = useState<(typeof COLORS)[number]>('colorful')
-  const [strength, setStrength] = useState(0.85)
+  const [strength, setStrength] = useState(1)
   const [active, setActive] = useState(true)
 
   return (
