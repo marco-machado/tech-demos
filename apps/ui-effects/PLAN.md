@@ -28,7 +28,10 @@ Include all five npm packages:
 - Touching other apps
 
 ## Stack
-Bun, Vite, React, TypeScript + the five packages above (+ `three` for img-fx).
+- Bun 1.4, Vite 8, React 19, TypeScript 6
+- `border-beam` 1.3, `thinking-orbs` 0.3, `liquid-gooey` 0.2, `metal-fx` 2.0, `img-fx` 0.5
+- `three` (peer of img-fx)
+- Tailwind CSS 4 for chrome only
 
 ## App path
 `apps/ui-effects/`
