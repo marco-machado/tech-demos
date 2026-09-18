@@ -1,5 +1,6 @@
 {
-  "proposed": [
+  "proposed": [],
+  "built": [
     {
       "id": "2095557317483782213",
       "title": "humanlayer /show-me",
@@ -7,9 +8,7 @@
       "date": "2026-09-18",
       "repo": "https://github.com/humanlayer/skills",
       "slug": "show-me"
-    }
-  ],
-  "built": [
+    },
     {
       "id": "2095551141367173608",
       "title": "Libraries.dev UI effects (all 5)",

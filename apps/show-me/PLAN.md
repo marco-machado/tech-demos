@@ -21,6 +21,10 @@ Prove the /show-me format palette in the browser: pick a format, see a focused v
   6. Shape-matched diff (component / file / call-tree style)
   7. Focused HTML artifact panel (infographic or mini slide for the same story)
 - Clicking a format updates the visual immediately; keep chrome minimal and readable
+- Shape-matched diff exposes three inner shapes (call tree default, plus component and file)
+- Mermaid is a sequence of submit → expand → launch → stream
+- HTML artifact is a framed infographic (`src/artifact.html`) of the same pipeline
+- Keyboard: 1–7 selects a format; arrows or j/k step
 - Self-contained: `bun install && bun run dev` from `apps/show-me/`
 - Vite `base` compatible with path deploy `/show-me/` (root build passes `--base`)
 - Credit the upstream skill + bookmark in the UI footer
