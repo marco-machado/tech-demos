@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+:root {
+  --paper: #f3eee4;
+  --paper-2: #e8e0d2;
+  --ink: #1b1712;
+  --muted: #6d6458;
+  --line: rgba(27, 23, 18, 0.12);
+  --card: #fffdf8;
+  --accent: #c94b2a;
+  --accent-soft: rgba(201, 75, 42, 0.12);
+  --gold: #c7921a;
+  --added: #2f6d4f;
+  --added-bg: rgba(47, 109, 79, 0.12);
+  --removed: #b42318;
+  --removed-bg: rgba(180, 35, 24, 0.1);
+  --code: #171410;
+  --code-text: #f4efe6;
+  --code-muted: #9a9084;
+  --kw: #f0b07a;
+  --id: #e8d5b0;
+  --cmt: #8c8378;
+  --path: #8fb9a4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(900px 420px at 8% -10%, rgba(201, 75, 42, 0.08), transparent 50%),
+    radial-gradient(700px 380px at 100% 0%, rgba(199, 146, 26, 0.08), transparent 46%),
+    var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+}
+
+code,
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.display {
+  font-family: Newsreader, Georgia, serif;
+}
+
+.stage-in {
+  animation: stage-in 180ms ease;
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-in {
+    animation: none;
+  }
+}
+
+.mermaid-stage svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.artifact-frame {
+  background: var(--code);
+}
+
+.artifact-frame iframe {
+  display: block;
+  width: 100%;
+  height: 22.5rem;
+  border: 0;
+  background: transparent;
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>show-me-expand-before-launch</title>
+    <style>
+      :root {
+        --ink: #f4efe6;
+        --muted: #b4aa9c;
+        --line: rgba(244, 239, 230, 0.12);
+        --accent: #e07a52;
+        --gold: #e8b84a;
+        --added: #7dba98;
+        --paper: #171410;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: radial-gradient(700px 280px at 80% -30%, rgba(224, 122, 82, 0.16), transparent 55%),
+          var(--paper);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      body {
+        padding: 18px 18px 16px;
+      }
+      .kicker {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 0 0 8px;
+      }
+      h1 {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        margin: 0 0 6px;
+        line-height: 1.15;
+      }
+      .lede {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      .lede code {
+        font-family: ui-monospace, monospace;
+        color: var(--gold);
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: 1fr 12px 1fr 12px 1fr;
+        gap: 6px;
+        align-items: stretch;
+      }
+      article {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        min-width: 0;
+      }
+      article .n {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        font-family: ui-monospace, monospace;
+      }
+      article h2 {
+        margin: 6px 0 8px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      article code {
+        display: block;
+        font-family: ui-monospace, monospace;
+        font-size: 11px;
+        background: rgba(0, 0, 0, 0.35);
+        border-radius: 7px;
+        padding: 8px 9px;
+        color: var(--gold);
+        overflow-wrap: anywhere;
+      }
+      article p {
+        margin: 8px 0 0;
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+      .arrow {
+        align-self: center;
+        color: var(--accent);
+        font-size: 16px;
+        text-align: center;
+      }
+      .foot {
+        margin-top: 14px;
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .pill {
+        color: var(--added);
+        font-family: ui-monospace, monospace;
+        font-size: 10px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="kicker">show-me · html artifact</p>
+    <h1>The agent never sees the slash.</h1>
+    <p class="lede">
+      Expand <code>/show-me</code> into the skill body before launch. Then navigate, then subscribe.
+    </p>
+    <div class="steps">
+      <article>
+        <div class="n">01 · Composer</div>
+        <h2>User submits</h2>
+        <code>/show-me this session</code>
+        <p>Slash mention in the draft — not a launch payload.</p>
+      </article>
+      <div class="arrow" aria-hidden="true">→</div>
+      <article>
+        <div class="n">02 · Expand</div>
+        <h2>Skill body inlined</h2>
+        <code>use the show-me skill…</code>
+        <p>Runs before createSession continues.</p>
+      </article>
+      <div class="arrow" aria-hidden="true">→</div>
+      <article>
+        <div class="n">03 · Daemon</div>
+        <h2>Agent launches</h2>
+        <code>launchAgent(body)</code>
+        <p>Navigate, then subscribe so the stream lands.</p>
+      </article>
+    </div>
+    <div class="foot">
+      <span>Focused HTML · canned story · not a live runtime</span>
+      <span class="pill">expand → launch → subscribe</span>
+    </div>
+  </body>
+</html>
