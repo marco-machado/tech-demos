@@ -1,5 +1,14 @@
 {
-  "proposed": [],
+  "proposed": [
+    {
+      "id": "2095551141367173608",
+      "title": "Libraries.dev UI effects (border-beam, thinking-orbs, \u2026)",
+      "url": "https://x.com/Jakubantalik/status/2095551141367173608",
+      "date": "2026-09-17",
+      "repo": "https://libraries.dev",
+      "slug": "ui-effects"
+    }
+  ],
   "built": [
     {
       "id": "2097596925189017695",
