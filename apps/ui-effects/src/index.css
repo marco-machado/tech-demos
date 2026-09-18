@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #07070a;
+  --bg-2: #0d0d12;
+  --card: #12121a;
+  --stage: #0a0a10;
+  --border: rgba(243, 239, 230, 0.1);
+  --text: #f3efe6;
+  --muted: #9a96a8;
+  --lilac: #c9b8ff;
+  --mint: #7ee0c8;
+  --apricot: #f2b07a;
+  --rose: #f0809a;
+  --ink: #1c1914;
+  --goo: #efe8dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(201, 184, 255, 0.12), transparent 55%),
+    radial-gradient(900px 500px at -10% 20%, rgba(126, 224, 200, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+code,
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.display {
+  font-family: Fraunces, Georgia, serif;
+}
+
+.goo-btn {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.goo-plus {
+  width: 58px;
+  height: 58px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.range {
+  accent-color: var(--lilac);
+}

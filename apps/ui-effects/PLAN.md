@@ -28,7 +28,10 @@ Include all five npm packages:
 - Touching other apps
 
 ## Stack
-Bun, Vite, React, TypeScript + the five packages above (+ `three` for img-fx).
+- Bun 1.4, Vite 8, React 19, TypeScript 6
+- `border-beam` 1.3, `thinking-orbs` 0.3, `liquid-gooey` 0.2, `metal-fx` 2.0, `img-fx` 0.5
+- `three` (peer of img-fx)
+- Tailwind CSS 4 for chrome only
 
 ## App path
 `apps/ui-effects/`
@@ -41,11 +44,11 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] All five libraries render visibly
-- [ ] App runs with Bun
-- [ ] Looks good enough for screenshot/video
-- [ ] PR includes ≥1 screenshot AND ≥1 video
-- [ ] Only `apps/ui-effects/` (+ tracking if marking built)
+- [x] All five libraries render visibly
+- [x] App runs with Bun
+- [x] Looks good enough for screenshot/video
+- [x] PR includes ≥1 screenshot AND ≥1 video
+- [x] Only `apps/ui-effects/` (+ tracking if marking built)
 
 ## Out of scope for this PR
 Deploy config (Vercel already wired).
