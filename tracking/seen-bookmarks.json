@@ -1,12 +1,12 @@
 {
   "proposed": [
     {
-      "id": "notion-3cb89ff326a181199b6de41e68405fbb",
-      "title": "vgpu (Vercel Labs WebGPU)",
-      "url": "https://app.notion.com/3cb89ff326a181199b6de41e68405fbb",
+      "id": "notion-35889ff326a1813a895de475e7c7dce0",
+      "title": "tldraw infinite canvas SDK",
+      "url": "https://app.notion.com/35889ff326a1813a895de475e7c7dce0",
       "date": "2026-09-18",
-      "repo": "https://github.com/vercel-labs/vgpu",
-      "slug": "vgpu",
+      "repo": "https://github.com/tldraw/tldraw",
+      "slug": "tldraw",
       "source": "notion-inbox"
     }
   ],
@@ -45,6 +45,13 @@
     }
   ],
   "skipped": [
+    {
+      "id": "notion-3cb89ff326a181199b6de41e68405fbb",
+      "title": "vgpu (Vercel Labs WebGPU)",
+      "url": "https://app.notion.com/3cb89ff326a181199b6de41e68405fbb",
+      "date": "2026-09-18",
+      "reason": "skipped by owner"
+    },
     {
       "id": "2099952031289000030",
       "title": "Sonner (via emilkowalski/skills)",
