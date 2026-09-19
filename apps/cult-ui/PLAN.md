@@ -47,9 +47,9 @@ bun run dev
 
 ## Acceptance
 - [x] App runs with Bun
-- [ ] ≥4 Cult UI components render and animate interactively
-- [ ] PR includes ≥1 screenshot of the running app
-- [ ] PR includes ≥1 video of the running app
+- [x] ≥4 Cult UI components render and animate interactively
+- [x] PR includes ≥1 screenshot of the running app
+- [x] PR includes ≥1 video of the running app
 - [x] Only files under `apps/cult-ui/` (+ `tracking/seen-bookmarks.json` if marking built)
 
 ## Out of scope for this PR

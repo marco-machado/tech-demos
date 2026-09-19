@@ -1,5 +1,6 @@
 {
-  "proposed": [
+  "proposed": [],
+  "built": [
     {
       "id": "notion-37189ff326a1816db52fcacf29a21641",
       "title": "Cult UI animated shadcn kit",
@@ -8,9 +9,7 @@
       "repo": "https://cult-ui.com",
       "slug": "cult-ui",
       "source": "notion-inbox"
-    }
-  ],
-  "built": [
+    },
     {
       "id": "2095557317483782213",
       "title": "humanlayer /show-me",
