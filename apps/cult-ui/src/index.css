@@ -3,33 +3,42 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #0c0b0a;
-  --foreground: #f4efe6;
-  --card: #161412;
-  --card-foreground: #f4efe6;
-  --popover: #161412;
-  --popover-foreground: #f4efe6;
-  --primary: #f4efe6;
-  --primary-foreground: #171717;
-  --secondary: #2a2622;
-  --secondary-foreground: #f4efe6;
-  --muted: #211e1b;
-  --muted-foreground: #9c9488;
-  --accent: #3a2e22;
-  --accent-foreground: #f4efe6;
-  --destructive: #c45c4a;
-  --border: rgba(244, 239, 230, 0.12);
-  --input: rgba(244, 239, 230, 0.12);
-  --ring: #e8a45a;
-  --radius: 0.75rem;
-  --bg: #0c0b0a;
-  --text: #f4efe6;
-  --quiet: #9c9488;
+  /* Kiln palette — warm stone neutrals so the vendored neutral-* greys sit naturally */
+  --bg: #0b0a09;
+  --surface: #121010;
+  --surface-2: #1a1816;
+  --text: #f3eee6;
+  --quiet: #a8a196;
+  --faint: #6e685f;
+  --line: rgba(243, 238, 230, 0.08);
+  --line-strong: rgba(243, 238, 230, 0.14);
   --ember: #e8a45a;
   --glaze: #7ec8c4;
   --clay: #c45c4a;
   --paper: #f4efe6;
-  --line: rgba(244, 239, 230, 0.12);
+  --ink: #171412;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* shadcn tokens consumed by the vendored Cult pieces */
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface-2);
+  --card-foreground: var(--text);
+  --popover: var(--surface-2);
+  --popover-foreground: var(--text);
+  --primary: var(--paper);
+  --primary-foreground: var(--ink);
+  --secondary: #262220;
+  --secondary-foreground: var(--text);
+  --muted: #1c1917;
+  --muted-foreground: var(--quiet);
+  --accent: #2a2320;
+  --accent-foreground: var(--text);
+  --destructive: var(--clay);
+  --border: var(--line-strong);
+  --input: var(--line-strong);
+  --ring: var(--ember);
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -51,6 +60,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-ember: var(--ember);
+  --color-glaze: var(--glaze);
+  --color-clay: var(--clay);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-quiet: var(--quiet);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -74,13 +91,19 @@ body,
 
 body {
   background:
-    radial-gradient(900px 480px at 88% -8%, rgba(232, 164, 90, 0.14), transparent 55%),
-    radial-gradient(720px 420px at -12% 18%, rgba(126, 200, 196, 0.08), transparent 50%),
+    radial-gradient(1100px 520px at 85% -10%, rgba(232, 164, 90, 0.11), transparent 60%),
+    radial-gradient(800px 460px at -10% 20%, rgba(126, 200, 196, 0.06), transparent 55%),
     var(--bg);
   color: var(--text);
-  font-family: Outfit, system-ui, sans-serif;
-  letter-spacing: 0.01em;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(232, 164, 90, 0.3);
 }
 
 button,
@@ -89,15 +112,58 @@ input {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 code,
 .mono {
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-feature-settings: 'zero';
 }
 
 .display {
   font-family: Newsreader, Georgia, serif;
+  font-optical-sizing: auto;
 }
 
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.dots {
+  background-image: radial-gradient(rgba(243, 238, 230, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+.spotlight {
+  background:
+    radial-gradient(520px 320px at 50% 48%, rgba(232, 164, 90, 0.1), transparent 70%),
+    radial-gradient(700px 400px at 50% 100%, rgba(126, 200, 196, 0.05), transparent 70%);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(243, 238, 230, 0.22);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 160ms var(--ease-out);
+}
+.link:hover {
+  text-decoration-color: var(--ember);
 }

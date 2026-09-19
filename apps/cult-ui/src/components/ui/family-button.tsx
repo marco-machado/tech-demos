@@ -1,4 +1,5 @@
 // Vendored from Cult UI (MIT) — https://github.com/nolly-studio/cult-ui
+// Kiln theme tweaks: outline, plus and close colors moved from yellow/cyan to ember/neutral.
 
 import { useState, type FC, type ReactNode } from "react"
 import { PlusIcon, XIcon } from "lucide-react"
@@ -19,7 +20,7 @@ const FamilyButton: React.FC<FamilyButtonProps> = ({ children }) => {
   return (
     <div
       className={cn(
-        "rounded-[24px] border border-black/10  shadow-sm dark:border-yellow-400/20",
+        "rounded-[24px] border border-black/10  shadow-sm dark:border-white/10",
         "bg-gradient-to-b  from-neutral-900 to-black",
         isExpanded
           ? "w-[204px] bg-gradient-to-b dark:from-stone-900 dark:to-neutral-900/80"
@@ -120,7 +121,7 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
       >
         {isExpanded ? (
           <motion.div
-            className="p-[10px] group bg-neutral-800/50 dark:bg-black/50 border border-cyan-100/30 hover:border-neutral-200 text-orange-50 rounded-full shadow-2xl transition-colors duration-300 "
+            className="p-[10px] group bg-neutral-800/50 dark:bg-black/50 border border-white/15 hover:border-white/40 text-orange-50 rounded-full shadow-2xl transition-colors duration-300 "
             onClick={toggleExpand}
             layoutId="expand-toggle"
             initial={false}
@@ -133,14 +134,14 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
           >
             <XIcon
               className={cn(
-                "h-7 w-7 text-cyan-100/30 dark:text-neutral-400/80 group-hover:text-neutral-500 transition-colors duration-200 "
+                "h-7 w-7 text-neutral-300 dark:text-neutral-300 group-hover:text-white transition-colors duration-200 "
               )}
             />
           </motion.div>
         ) : (
           <motion.div
             className={cn(
-              "p-[10px] group bg-neutral-200 dark:bg-cyan-500/90 text-cyan-50 border border-cyan-100/10  shadow-2xl transition-colors duration-200"
+              "p-[10px] group bg-neutral-200 dark:bg-[#e8a45a] dark:hover:bg-[#f0b26c] text-neutral-900 border border-white/15 shadow-2xl transition-colors duration-200"
             )}
             style={{ borderRadius: 24 }}
             onClick={toggleExpand}

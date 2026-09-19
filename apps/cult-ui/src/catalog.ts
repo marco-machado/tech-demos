@@ -1,40 +1,73 @@
+export type InteractionMode = 'hover' | 'click' | 'type' | 'sweep'
+
 export const PIECES = [
   {
     id: 'shift',
     label: 'Shift Card',
-    hint: 'Hover to reveal the share sheet',
-    blurb: 'A card that lifts its middle still and unfolds extra detail on hover.',
+    title: 'Lift the still, unfold the share sheet.',
+    hint: 'Hover the card',
+    mode: 'hover',
+    source: 'shift-card.tsx',
+    built: 'AnimatePresence · shared layoutId',
   },
   {
     id: 'texture-button',
     label: 'Texture Button',
-    hint: 'Press any glaze to hear the bevel',
-    blurb: 'Beveled, layered buttons with primary, accent, destructive, and icon finishes.',
+    title: 'Beveled buttons in six finishes.',
+    hint: 'Press any button',
+    mode: 'click',
+    source: 'texture-button.tsx',
+    built: 'cva variants · layered gradients',
   },
   {
     id: 'texture-card',
     label: 'Texture Card',
-    hint: 'Fill the slip and continue',
-    blurb: 'Nested stone borders that catch light like fired clay.',
+    title: 'Five nested hairlines, one card.',
+    hint: 'Fill in the slip',
+    mode: 'type',
+    source: 'texture-card.tsx',
+    built: 'concentric borders 24 → 20',
   },
   {
     id: 'expandable',
     label: 'Expandable',
-    hint: 'Click the meeting to expand',
-    blurb: 'A hover-or-click card that grows and fades in hidden rows.',
+    title: 'A meeting card that grows on demand.',
+    hint: 'Click to expand',
+    mode: 'click',
+    source: 'expandable.tsx',
+    built: 'useSpring · useMeasure',
   },
   {
     id: 'family',
     label: 'Family Button',
-    hint: 'Open the plus, then pick a glaze',
-    blurb: 'A plus control that springs into a compact family panel.',
+    title: 'A plus that springs into a panel.',
+    hint: 'Open the plus, pick a glaze',
+    mode: 'click',
+    source: 'family-button.tsx',
+    built: 'layout spring · layoutId toggle',
   },
   {
     id: 'dock',
     label: 'Dock',
-    hint: 'Sweep the icons, click to bounce',
-    blurb: 'A magnification dock with bounce-on-open tiles.',
+    title: 'Magnify on sweep, bounce on launch.',
+    hint: 'Sweep, then click a tile',
+    mode: 'sweep',
+    source: 'dock.tsx',
+    built: 'useTransform · springs',
   },
-] as const
+] as const satisfies readonly {
+  id: string
+  label: string
+  title: string
+  hint: string
+  mode: InteractionMode
+  source: string
+  built: string
+}[]
 
 export type PieceId = (typeof PIECES)[number]['id']
+export type Piece = (typeof PIECES)[number]
+
+export function isPieceId(value: string): value is PieceId {
+  return PIECES.some((piece) => piece.id === value)
+}
