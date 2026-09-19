@@ -2,6 +2,15 @@
   "proposed": [],
   "built": [
     {
+      "id": "notion-30e89ff326a181c486bcd9aa7b30ba15",
+      "title": "MapCN map components",
+      "url": "https://app.notion.com/p/30e89ff326a181c486bcd9aa7b30ba15",
+      "date": "2026-09-19",
+      "repo": "https://mapcn.dev",
+      "slug": "mapcn",
+      "source": "notion-inbox"
+    },
+    {
       "id": "notion-37189ff326a1816db52fcacf29a21641",
       "title": "Cult UI animated shadcn kit",
       "url": "https://app.notion.com/37189ff326a1816db52fcacf29a21641",
