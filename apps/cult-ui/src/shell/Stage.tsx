@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import type { ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { PIECES, type InteractionMode, type Piece, type PieceId } from '../catalog.ts'
 import { TextureButton } from '../components/ui/texture-button'
 
@@ -121,10 +121,23 @@ export function Stage({ active, onChange, children }: StageProps) {
 }
 
 function PieceNav({ active, onChange }: Omit<StageProps, 'children'>) {
+  const navRef = useRef<HTMLElement>(null)
+
+  // Keep the active chip visible when the nav overflows (narrow screens). Only the nav's
+  // own horizontal scroll moves, so this never drags the page vertically.
+  useEffect(() => {
+    const nav = navRef.current
+    const chip = nav?.querySelector<HTMLElement>('[aria-current="true"]')
+    if (!nav || !chip || nav.scrollWidth <= nav.clientWidth) return
+    const left = chip.offsetLeft - (nav.clientWidth - chip.offsetWidth) / 2
+    nav.scrollTo({ left: Math.max(0, left), behavior: 'smooth' })
+  }, [active])
+
   return (
     <nav
       aria-label="Pieces"
-      className="no-scrollbar -mx-1 flex min-w-0 gap-0.5 overflow-x-auto rounded-[16px] bg-white/[0.03] p-1"
+      className="no-scrollbar relative -mx-1 flex min-w-0 gap-0.5 overflow-x-auto rounded-[16px] bg-white/[0.03] p-1"
+      ref={navRef}
     >
       {PIECES.map((piece, i) => {
         const selected = piece.id === active
