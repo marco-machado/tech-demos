@@ -14,13 +14,14 @@ export function TextureButtonStage() {
       </p>
       <div className="flex flex-wrap items-center justify-center gap-3">
         {VARIANTS.map((variant) => (
-          <TextureButton
-            key={variant}
-            onClick={() => setLast(variant)}
-            variant={variant}
-          >
-            {variant}
-          </TextureButton>
+          <div className="w-[9.5rem]" key={variant}>
+            <TextureButton
+              onClick={() => setLast(variant)}
+              variant={variant}
+            >
+              {variant}
+            </TextureButton>
+          </div>
         ))}
       </div>
       <div className="flex gap-3">
