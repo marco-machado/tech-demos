@@ -54,3 +54,31 @@ bun run dev
 
 ## Out of scope for this PR
 Deploy config (already on Vercel); secrets.
+
+## Polish pass (v2) — visual craft only
+
+Owner feedback on the live gallery: "looks really shitty." Feature set is frozen at the six pieces above; this pass fixes presentation.
+
+### Diagnosis of v1
+- Chips lived in the sticky header and wrapped to two rows on mobile, covering the hero
+- Stage was a 520px empty box with the piece floating in it; title and hint were misaligned; no transition between pieces
+- Stage surface barely separated from the page; warm browns fought the vendored `neutral-*` greys (muddy)
+- Shift Card mixed a brown header, dark body, cream sheet and heavy black-bordered white buttons; the hover thumbnail overlapped the sheet and its dashed frame was offset
+- Family Button kept upstream's yellow outline + cyan plus; Texture Card's indigo CTA was the only cool accent on the page
+- Dock floated in the void with no context
+
+### What changes
+- **Tokens:** stone-based palette so vendored greys sit naturally; lighter, less saturated `--quiet`; hairline `--line` at 8% / 14%; ember + glaze kept as the two accents; `--paper`/`--ink` for the Shift sheet
+- **Type:** Inter for UI, Newsreader for display, IBM Plex Mono for labels; tighter hero scale; mono eyebrows at 11px / 0.18em
+- **Chrome:** minimal header (mark + links); compact hero with fact pills; stage frame with concentric radii (24 → 16 → 12), segmented piece nav with a spring `layoutId` indicator, stage header (index / title / interaction hint pill), spotlight + dot-grid + grain canvas, footer with source file + prev/next (Cult icon buttons)
+- **Motion:** ease-out entrances (`[0.16, 1, 0.3, 1]`, ~300ms), quick ease-in exits (~140ms), staggered hero, `MotionConfig reducedMotion="user"`
+- **Navigation:** ← / → keys and `#piece` hash sync (presentation plumbing, not a new feature)
+- **Pieces:** Shift Card sheet re-cut as paper + ink with aligned thumbnail/frame; Texture Button staged as a spec sheet (variant / size / icon rows + live readout); Texture Card inputs with inset shadow + ember focus ring, primary CTA; Expandable on tokens with ember pill and chevron affordance; Family Button glaze picker (6 swatches, preview) with ember plus; Dock inside a mini desktop frame
+- **Vendored tweaks (theme only):** `family-button.tsx` outline/plus/close colors; Dock container radius/blur via `className`
+
+### Acceptance (v2)
+- [ ] All six pieces still render and animate; no feature removed
+- [ ] No two-row chip wrap at 390px; header is a single row
+- [ ] Every stage transition and hover uses ease-out in / ease-in out
+- [ ] `bun run build` in the app and root `bun run build` both pass; `dist/cult-ui/` emitted
+- [ ] PR includes ≥1 screenshot and ≥1 video of the polished app

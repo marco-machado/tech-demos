@@ -23,9 +23,11 @@ Open the printed local URL (Vite, usually `http://localhost:5177`). Production p
 
 ## What to try
 
-- **Shift Card** — hover to lift the still and reveal the share tray
-- **Texture Button** — press each glaze; the last press updates
+- **Shift Card** — hover to lift the still and reveal the share sheet
+- **Texture Button** — press any variant, size, or icon; the readout updates
 - **Texture Card** — fill the slip and continue
 - **Expandable** — click Design Sync to grow the meeting
 - **Family Button** — open the plus and pick a glaze
-- **Dock** — sweep icons, click a tile to bounce
+- **Dock** — sweep icons, click a tile to launch, click again to quit
+
+Switch pieces with the segmented nav, the ← / → keys, or a `#piece` hash (e.g. `/cult-ui/#dock`).

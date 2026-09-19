@@ -1,4 +1,5 @@
-import { Calendar, Clock, MapPin, Users } from 'lucide-react'
+import { Calendar, ChevronDown, Clock, MapPin, Users, Video } from 'lucide-react'
+import { motion } from 'motion/react'
 import {
   Expandable,
   ExpandableCard,
@@ -8,77 +9,113 @@ import {
   ExpandableContent,
   ExpandableTrigger,
 } from '../components/ui/expandable'
+import { TextureButton } from '../components/ui/texture-button'
 
-const ATTENDEES = ['Ada', 'Nico', 'Jun', 'Ivy']
+const ATTENDEES = [
+  { name: 'Ada', tone: '#e8a45a' },
+  { name: 'Nico', tone: '#7ec8c4' },
+  { name: 'Jun', tone: '#c45c4a' },
+  { name: 'Ivy', tone: '#b7a2d6' },
+]
 
 export function ExpandableStage() {
   return (
-    <Expandable expandBehavior="replace" expandDirection="both" initialDelay={0.1}>
+    <Expandable
+      easeType={[0.16, 1, 0.3, 1]}
+      expandBehavior="replace"
+      expandDirection="both"
+      transitionDuration={0.32}
+    >
       {({ isExpanded }) => (
         <ExpandableTrigger>
+          {/* Upstream draws the visible card at wrapper width − 4rem (md), so the wrapper is
+              sized 64px wider than the 320 / 420 card we want; heights match measured content. */}
           <ExpandableCard
             className="relative w-full"
-            collapseDelay={200}
-            collapsedSize={{ width: 320, height: 232 }}
-            expandDelay={80}
-            expandedSize={{ width: 420, height: 430 }}
+            collapsedSize={{ width: 384, height: 217 }}
+            expandedSize={{ width: 484, height: 411 }}
             hoverToExpand={false}
           >
-            <ExpandableCardHeader>
+            <ExpandableCardHeader className="px-5 pt-5 pb-3">
               <div className="flex w-full items-start justify-between">
                 <div className="flex flex-col items-start">
-                  <span className="mb-2 rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-medium text-red-600 dark:bg-red-900 dark:text-red-100">
+                  <span className="mb-2.5 inline-flex items-center gap-1.5 rounded-full bg-ember/12 px-2 py-0.5 text-[11px] font-medium text-ember">
+                    <span className="size-1.5 rounded-full bg-ember" />
                     In 15 mins
                   </span>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                  <h3 className="text-[19px] leading-6 font-semibold tracking-[-0.01em] text-[var(--text)]">
                     Design Sync
                   </h3>
                 </div>
-                <span className="grid size-8 place-items-center rounded-md border border-border">
-                  <Calendar className="h-4 w-4" />
+                <span className="grid size-8 place-items-center rounded-[9px] border border-white/[0.08] bg-white/[0.04] text-quiet shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+                  <Calendar className="size-4" strokeWidth={1.75} />
                 </span>
               </div>
             </ExpandableCardHeader>
-            <ExpandableCardContent>
-              <div className="mb-4 flex flex-col items-start justify-between">
-                <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                  <Clock className="mr-1 h-4 w-4" />
-                  <span>1:30PM → 2:30PM</span>
+
+            <ExpandableCardContent className="px-5 pb-0">
+              <div className="mb-2 flex flex-col items-start gap-1.5">
+                <div className="flex items-center gap-2 text-[13.5px] text-quiet">
+                  <Clock className="size-3.5 text-faint" strokeWidth={1.75} />
+                  <span className="tabular-nums">1:30 → 2:30 PM</span>
                 </div>
-                <ExpandableContent preset="blur-md">
-                  <div className="mt-1 flex items-center text-sm text-gray-600 dark:text-gray-300">
-                    <MapPin className="mr-1 h-4 w-4" />
+                <ExpandableContent preset="blur-sm">
+                  <div className="flex items-center gap-2 text-[13.5px] text-quiet">
+                    <MapPin className="size-3.5 text-faint" strokeWidth={1.75} />
                     <span>Conference Room A</span>
                   </div>
                 </ExpandableContent>
               </div>
-              <ExpandableContent preset="blur-md" stagger staggerChildren={0.16}>
-                <p className="mb-4 text-sm text-gray-700 dark:text-gray-200">
-                  Weekly design sync for glaze tests, type ramps, and the Cult
-                  pieces on this stage.
+
+              <ExpandableContent preset="blur-sm" stagger staggerChildren={0.08}>
+                <p className="mb-4 text-[13.5px] leading-[1.55] text-pretty text-[var(--text)]/85">
+                  Weekly design sync for glaze tests, type ramps, and the Cult pieces on this
+                  stage.
                 </p>
-                <div>
-                  <h4 className="mb-2 flex items-center text-sm font-medium text-gray-800 dark:text-gray-100">
-                    <Users className="mr-2 h-4 w-4" />
+                <div className="mb-4">
+                  <h4 className="mb-2 flex items-center gap-2 text-[12px] font-medium tracking-[0.02em] text-quiet uppercase">
+                    <Users className="size-3.5 text-faint" strokeWidth={1.75} />
                     Attendees
                   </h4>
-                  <div className="flex -space-x-2 overflow-hidden">
-                    {ATTENDEES.map((name) => (
+                  <div className="flex -space-x-2">
+                    {ATTENDEES.map((person) => (
                       <span
-                        className="grid size-8 place-items-center rounded-full border-2 border-white bg-neutral-800 text-[11px] text-white dark:border-gray-800"
-                        key={name}
+                        className="grid size-8 place-items-center rounded-full border-2 border-[var(--muted)] text-[11px] font-semibold text-ink"
+                        key={person.name}
+                        style={{ background: person.tone }}
+                        title={person.name}
                       >
-                        {name[0]}
+                        {person.name[0]}
                       </span>
                     ))}
+                    <span className="grid size-8 place-items-center rounded-full border-2 border-[var(--muted)] bg-[#302b27] text-[10.5px] font-medium text-quiet">
+                      +2
+                    </span>
                   </div>
                 </div>
+                <TextureButton
+                  onClick={(event) => event.stopPropagation()}
+                  variant="primary"
+                >
+                  <span className="flex items-center gap-2 font-medium">
+                    <Video className="size-4" strokeWidth={2} />
+                    Join call
+                  </span>
+                </TextureButton>
               </ExpandableContent>
             </ExpandableCardContent>
-            <ExpandableCardFooter>
-              <p className="text-[12px] text-muted-foreground">
+
+            <ExpandableCardFooter className="justify-between px-5 pt-2 pb-4">
+              <p className="text-[12px] text-faint">
                 {isExpanded ? 'Click again to fold' : 'Click to expand'}
               </p>
+              <motion.span
+                animate={{ rotate: isExpanded ? 180 : 0 }}
+                className="grid size-6 place-items-center rounded-full bg-white/[0.05] text-quiet"
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <ChevronDown className="size-3.5" strokeWidth={2} />
+              </motion.span>
             </ExpandableCardFooter>
           </ExpandableCard>
         </ExpandableTrigger>
