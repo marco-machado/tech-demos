@@ -1,4 +1,4 @@
-import { readdir, mkdir, writeFile, access } from "node:fs/promises";
+import { readdir, mkdir, access } from "node:fs/promises";
 import { join } from "node:path";
 import { spawn } from "node:child_process";
 
@@ -32,6 +32,7 @@ const apps: string[] = [];
 for (const entry of entries) {
   if (!entry.isDirectory()) continue;
   const slug = entry.name;
+  if (slug === "home") continue;
   const appPath = join(appsDir, slug);
   if (!(await exists(join(appPath, "package.json")))) continue;
   apps.push(slug);
@@ -46,33 +47,10 @@ for (const entry of entries) {
   );
 }
 
-const links = apps
-  .sort()
-  .map((slug) => `<li><a href="/${slug}/">${slug}</a></li>`)
-  .join("\n");
-
-await writeFile(
-  join(distDir, "index.html"),
-  `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>tech-demos</title>
-    <style>
-      body { font-family: ui-sans-serif, system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
-      a { color: #2563eb; }
-    </style>
-  </head>
-  <body>
-    <h1>tech-demos</h1>
-    <p>Sticky monorepo demos (path per app).</p>
-    <ul>
-${links || "      <li>No apps built yet.</li>"}
-    </ul>
-  </body>
-</html>
-`,
-);
+// Build the public front door last. Do not empty dist: demo routes live here too.
+const homepage = join(appsDir, "home");
+await run("bun", ["install"], homepage);
+await run("bun", ["x", "tsc", "--noEmit"], homepage);
+await run("bun", ["x", "vite", "build", "--base", "/", "--outDir", distDir], homepage);
 
 console.log(`\nBuilt ${apps.length} app(s) → dist/`);
