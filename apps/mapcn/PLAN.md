@@ -48,9 +48,9 @@ bun run dev
 ## Acceptance
 - [x] App runs with Bun
 - [x] Markers, routes/polylines, controls, and theme-aware tiles are interactive
-- [ ] PR includes ≥1 screenshot of the running app
-- [ ] PR includes ≥1 video of the running app
-- [ ] Only files under `apps/mapcn/` (+ `tracking/seen-bookmarks.json` if marking built)
+- [x] PR includes ≥1 screenshot of the running app
+- [x] PR includes ≥1 video of the running app
+- [x] Only files under `apps/mapcn/` (+ `tracking/seen-bookmarks.json` if marking built)
 
 ## Out of scope for this PR
 Deploy config (already on Vercel); secrets.
