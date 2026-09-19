@@ -1,15 +1,5 @@
 {
-  "proposed": [
-    {
-      "id": "notion-35889ff326a1813a895de475e7c7dce0",
-      "title": "tldraw infinite canvas SDK",
-      "url": "https://app.notion.com/35889ff326a1813a895de475e7c7dce0",
-      "date": "2026-09-18",
-      "repo": "https://github.com/tldraw/tldraw",
-      "slug": "tldraw",
-      "source": "notion-inbox"
-    }
-  ],
+  "proposed": [],
   "built": [
     {
       "id": "2095557317483782213",
@@ -45,6 +35,13 @@
     }
   ],
   "skipped": [
+    {
+      "id": "notion-35889ff326a1813a895de475e7c7dce0",
+      "title": "tldraw infinite canvas SDK",
+      "url": "https://app.notion.com/35889ff326a1813a895de475e7c7dce0",
+      "date": "2026-09-18",
+      "reason": "skipped by owner"
+    },
     {
       "id": "notion-3cb89ff326a181199b6de41e68405fbb",
       "title": "vgpu (Vercel Labs WebGPU)",
