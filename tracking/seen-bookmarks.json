@@ -1,5 +1,15 @@
 {
-  "proposed": [],
+  "proposed": [
+    {
+      "id": "notion-37189ff326a1816db52fcacf29a21641",
+      "title": "Cult UI animated shadcn kit",
+      "url": "https://app.notion.com/37189ff326a1816db52fcacf29a21641",
+      "date": "2026-09-18",
+      "repo": "https://cult-ui.com",
+      "slug": "cult-ui",
+      "source": "notion-inbox"
+    }
+  ],
   "built": [
     {
       "id": "2095557317483782213",
