@@ -11,9 +11,15 @@ Prove a handful of Cult UI–style animated components in a self-contained Bun +
 
 ## MVP scope
 - Bun + Vite + React + TypeScript under `apps/cult-ui/`
-- Install via Cult UI / shadcn registry CLI where practical (`pnpm dlx cult-ui@latest add …` adapted for Bun), or vendored component source under `apps/cult-ui/src/components/` if registry install is awkward in the monorepo app
-- Gallery of **4–6** free open-source Cult UI components (not Cult Pro paid blocks), e.g. Shift Card, texture button/card, one hover/expand interaction, one decorative motion piece
-- Dark stage, chip switcher or scroll sections, credit footer linking cult-ui.com + Inbox source
+- Vendored MIT Cult UI registry source under `apps/cult-ui/src/components/ui/` (cult-ui.com registry is bot-challenged from this environment; source matches nolly-studio/cult-ui)
+- Gallery of **6** free open-source Cult UI components (not Cult Pro paid blocks):
+  1. Shift Card — hover reveals share detail
+  2. Texture Button — beveled variants
+  3. Texture Card — nested stone borders
+  4. Expandable — click-to-grow meeting card
+  5. Family Button — plus expands a glaze picker
+  6. Dock — magnification + bounce
+- Dark stage named Kiln, chip switcher, credit footer linking cult-ui.com + Inbox source
 - Self-contained: `bun install && bun run dev` from `apps/cult-ui/`
 - Vite `base` compatible with path deploy `/cult-ui/` (root build passes `--base`)
 
@@ -27,6 +33,7 @@ Prove a handful of Cult UI–style animated components in a self-contained Bun +
 - Tailwind CSS 4
 - `motion` (Framer Motion) as required by Cult components
 - Cult UI registry components (source owned in-app)
+- `class-variance-authority`, `@radix-ui/react-slot`, `lucide-react`, `react-use-measure`
 
 ## App path
 `apps/cult-ui/`
@@ -39,11 +46,11 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] App runs with Bun
-- [ ] ≥4 Cult UI components render and animate interactively
-- [ ] PR includes ≥1 screenshot of the running app
-- [ ] PR includes ≥1 video of the running app
-- [ ] Only files under `apps/cult-ui/` (+ `tracking/seen-bookmarks.json` if marking built)
+- [x] App runs with Bun
+- [x] ≥4 Cult UI components render and animate interactively
+- [x] PR includes ≥1 screenshot of the running app
+- [x] PR includes ≥1 video of the running app
+- [x] Only files under `apps/cult-ui/` (+ `tracking/seen-bookmarks.json` if marking built)
 
 ## Out of scope for this PR
 Deploy config (already on Vercel); secrets.
