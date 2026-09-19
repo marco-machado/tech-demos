@@ -37,27 +37,30 @@ export function ArcsScene() {
     [],
   )
 
-  const active = HOPS.find((hop) => hop.id === (hoverId ?? selectedId)) ?? HOPS[0]
+  const focusId = hoverId ?? selectedId
+  const active = HOPS.find((hop) => hop.id === focusId) ?? HOPS[0]
 
   return (
-    <Map center={[20, 18]} maxPitch={0} minZoom={1.2} zoom={1.55}>
+    <Map blank center={[10, 16]} maxPitch={0} minZoom={1.1} zoom={1.45}>
       <MapArc
         curvature={0.22}
         data={data}
-        hoverPaint={{ 'line-width': 3.5, 'line-opacity': 1 }}
+        hoverPaint={{ 'line-width': 3.6, 'line-opacity': 1 }}
         onClick={(event) => setSelectedId(String(event.arc.id))}
         onHover={(event) => setHoverId(event ? String(event.arc.id) : null)}
         paint={{
-          'line-color': '#7aa2ff',
-          'line-opacity': 0.7,
-          'line-width': 2,
+          'line-color': ['case', ['==', ['get', 'id'], focusId], '#5eead4', '#7aa2ff'],
+          'line-opacity': 0.9,
+          'line-width': ['case', ['==', ['get', 'id'], focusId], 3.2, 2],
         }}
       />
       {CITIES.map((item) => (
         <MapMarker key={item.id} latitude={item.lat} longitude={item.lng}>
           <MarkerContent>
-            <div className="size-2.5 rounded-full border border-white/80 bg-[#5eead4] shadow" />
-            <MarkerLabel className="text-[10px] text-foreground/90">{item.name}</MarkerLabel>
+            <div className="size-3 rounded-full border-2 border-white bg-[#5eead4] shadow-md" />
+            <MarkerLabel className="bg-background/80 rounded px-1.5 py-0.5 text-[10px] text-foreground shadow-sm">
+              {item.name}
+            </MarkerLabel>
           </MarkerContent>
         </MapMarker>
       ))}

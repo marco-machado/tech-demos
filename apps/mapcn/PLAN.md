@@ -46,8 +46,8 @@ bun run dev
 ```
 
 ## Acceptance
-- [ ] App runs with Bun
-- [ ] Markers, routes/polylines, controls, and theme-aware tiles are interactive
+- [x] App runs with Bun
+- [x] Markers, routes/polylines, controls, and theme-aware tiles are interactive
 - [ ] PR includes ≥1 screenshot of the running app
 - [ ] PR includes ≥1 video of the running app
 - [ ] Only files under `apps/mapcn/` (+ `tracking/seen-bookmarks.json` if marking built)

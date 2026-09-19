@@ -70,14 +70,14 @@ export function RouteScene() {
     <Map center={[-122.4008, 37.7996]} zoom={14.2}>
       <MapControls position="top-right" showZoom />
       <MapRoute
-        color="#94a3b8"
+        color="#475569"
         coordinates={ROUTE}
-        dashArray={[0.5, 1.5]}
-        opacity={0.8}
+        dashArray={[0.8, 1.4]}
+        opacity={1}
         progress={progress}
-        width={5}
+        width={6}
       >
-        <RouteProgress color="#7aa2ff" opacity={1} width={5} />
+        <RouteProgress color="#7aa2ff" opacity={1} width={6} />
         <RouteMarker at="start">
           <MarkerContent>
             <div className="border-foreground bg-background size-3.5 rounded-full border-2 shadow-md" />

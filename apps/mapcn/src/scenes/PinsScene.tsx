@@ -58,7 +58,7 @@ export function PinsScene() {
   const place = PLACES.find((item) => item.id === selected) ?? PLACES[1]
 
   return (
-    <Map center={[-73.98, 40.75]} zoom={12}>
+    <Map center={[-73.985, 40.758]} zoom={12.2}>
       <MapControls position="top-right" showZoom />
       <FlyTo latitude={place.lat} longitude={place.lng} />
       {PLACES.map((item) => (
